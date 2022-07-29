@@ -1,7 +1,7 @@
 {
-  "name": "vue-editor-js",
+  "name": "vue-editor-js-ext",
   "license": "MIT",
-  "author": "ChangJoo Park<pcjpcj2@gmail.com>",
+  "author": "Artem <temph69@gmail.com>",
   "keywords": [
     "editor",
     "editorjs",
