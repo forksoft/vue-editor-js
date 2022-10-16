@@ -1,8 +1,9 @@
-# 2.0.2
-
-- Support change holder id @npyramid PR #70
+# WIP
 
 # 1.0.0
 
-- Support Vue Composition API
-- Drop support import in compoentn
+- Vue3 port of `vue-editor-js`
+- Removed all the plugins but Header and List
+- Update all dependencies
+- Update the demo
+- Update the building process
