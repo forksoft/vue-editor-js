@@ -1,5 +1,6 @@
 {
   "name": "vue3-editor-js",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Klöen Lansfiel<kloen@kloenlansfiel.com>",
   "keywords": [
@@ -14,47 +15,23 @@
   "bugs": {
     "url": "https://github.com/Kloen/vue3-editor-js/issues"
   },
-  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "dev:build": "vue-tsc --noEmit && vite build",
-    "deps:update": "npx npm-check-updates -u && npm install",
-    "prebuild": "rimraf dist",
-    "build": "rollup -c ./build/rollup.config.js"
+    "build": "vue-tsc && vite build",
+    "deps:update": "npx npm-check-updates -u && npm install"
   },
-  "main": "dist/vue-editor-js.common.js",
-  "module": "dist/vue-editor-js.esm.js",
-  "unpkg": "dist/vue-editor-js.esm.min.js",
-  "jsdelivr": "dist/vue-editor-js.umd.min.js",
-  "files": [
-    "dist/vue-editor-js.common.js",
-    "dist/vue-editor-js.umd.min.js",
-    "dist/vue-editor-js.umd.js",
-    "dist/vue-editor-js.esm.js",
-    "src"
-  ],
   "dependencies": {
     "@editorjs/editorjs": "^2.25.0",
-    "@rollup/plugin-typescript": "^9.0.1"
+    "vue": "^3.2.41"
   },
   "devDependencies": {
     "@editorjs/header": "^2.6.2",
     "@editorjs/list": "^1.7.0",
+    "@types/node": "^18.11.2",
     "@vitejs/plugin-vue": "^3.1.2",
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/cli-plugin-typescript": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
-    "@zerollup/ts-transform-paths": "^1.7.18",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.25.0",
-    "eslint-plugin-vue": "^9.6.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.79.1",
     "typescript": "^4.8.4",
     "vite": "^3.1.8",
-    "vue": "^3.2.41",
-    "vue-tsc": "^0.40.13"
+    "vue-tsc": "^1.0.8"
   },
   "sideeffects": false
 }
