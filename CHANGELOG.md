@@ -1,5 +1,10 @@
 # WIP
 
+# 1.1.0
+
+- Use Vite as build tool
+
+
 # 1.0.0
 
 - Vue3 port of `vue-editor-js`
