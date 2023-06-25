@@ -8,7 +8,7 @@ import {
   onMounted,
   watch,
   defineComponent
-} from '@vue/composition-api'
+} from 'vue'
 import EditorJS from '@editorjs/editorjs'
 
 export default defineComponent({
