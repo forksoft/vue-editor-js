@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/forksoft/vue-editor-js/issues"
   },
-  "version": "3.0.1",
+  "version": "3.0.2",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -36,8 +36,7 @@
     "src"
   ],
   "dependencies": {
-    "@editorjs/editorjs": "^2.25.0",
-    "@vue/composition-api": "^1.7.0"
+    "@editorjs/editorjs": "^2.27.2"
   },
   "jsdelivr": "dist/vue-editor-js.umd.min.js",
   "sideeffects": false
