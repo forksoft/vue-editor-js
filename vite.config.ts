@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'Vue3EditorJS',
+      name: 'VueEditorJS',
       fileName: (format) => `vue-editor-js.${format}.js`
     },
     rollupOptions: {
