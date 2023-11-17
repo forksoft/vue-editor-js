@@ -3,11 +3,8 @@
   "license": "MIT",
   "author": "Artem <temph69@gmail.com>",
   "keywords": [
-    "editor",
     "editorjs",
-    "vue.js",
-    "vue-editor",
-    "vue-composition-api",
+    "vue-editor-js",
     "vue3"
   ],
   "repository": {
@@ -17,27 +14,33 @@
   "bugs": {
     "url": "https://github.com/forksoft/vue-editor-js/issues"
   },
-  "version": "3.0.3",
+  "version": "4.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "demo": "vue-cli-service demo",
-    "start": "vue-cli-service serve"
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "deps:update": "npx npm-check-updates -u && npm install"
   },
-  "main": "dist/vue-editor-js.common.js",
-  "module": "dist/vue-editor-js.esm.js",
-  "unpkg": "dist/vue-editor-js.umd.min.js",
   "files": [
-    "dist/vue-editor-js.common.js",
-    "dist/vue-editor-js.umd.min.js",
-    "dist/vue-editor-js.umd.js",
-    "dist/vue-editor-js.esm.js",
-    "src"
+    "dist"
   ],
-  "dependencies": {
-    "@editorjs/editorjs": "^2.27.2"
+  "main": "./dist/vue-editor-js.umd.js",
+  "module": "./dist/vue-editor-js.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-editor-js.es.js",
+      "require": "./dist/vue-editor-js.umd.js"
+    }
   },
-  "jsdelivr": "dist/vue-editor-js.umd.min.js",
+  "dependencies": {
+    "@editorjs/editorjs": "^2.28.2",
+    "vue": "^3.3.8"
+  },
+  "devDependencies": {
+    "@types/node": "^18.18.9",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vue-tsc": "^1.8.22"
+  },
   "sideeffects": false
 }

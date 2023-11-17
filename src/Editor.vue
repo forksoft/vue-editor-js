@@ -3,13 +3,10 @@
 </template>
 
 <script>
-import {
-  reactive,
-  onMounted,
-  watch,
-  defineComponent
-} from 'vue'
 import EditorJS from '@editorjs/editorjs'
+import {defineComponent, onMounted, reactive} from "vue";
+
+export const PLUGINS = {}
 
 export default defineComponent({
   name: 'vue-editor-js',
@@ -51,6 +48,45 @@ export default defineComponent({
     onMounted(_ => initEditor(props))
 
     return { props, state }
+  },
+  methods: {
+    useTools(props, config) {
+      const pluginKeys = Object.keys(PLUGINS)
+      const tools = { ...props.customTools }
+
+      if (pluginKeys.every(p => !props[p])) {
+        pluginKeys.forEach(key => tools[key] = { class: PLUGINS[key] })
+        Object.keys(config).forEach(key => {
+          if (tools[key] !== undefined && tools[key] !== null) {
+            tools[key]['config'] = config[key]
+          }
+        })
+        return tools
+      }
+
+      pluginKeys.forEach(key => {
+        const prop = props[key]
+        if (!prop) {
+          return
+        }
+
+        tools[key] = { class: PLUGINS[key] }
+
+        if (typeof prop === 'object') {
+          const options = Object.assign({}, props[key])
+          delete options['class']
+          tools[key] = Object.assign(tools[key], options)
+        }
+      })
+
+      Object.keys(config).forEach(key => {
+        if (tools[key] !== undefined && tools[key] !== null) {
+          tools[key]['config'] = config[key]
+        }
+      })
+
+      return tools
+    }
   }
 })
 </script>
